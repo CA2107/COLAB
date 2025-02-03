@@ -135,10 +135,10 @@ async def taskScheduler():
     except Exception:
         Paths.HERO_IMAGE = Paths.DEFAULT_HERO
 
-    Comenta o elimina el envío de mensajes al DUMP_ID
+    # Comenta o elimina el envío de mensajes al DUMP_ID
     MSG.sent_msg = await colab_bot.send_message(chat_id=OWNER, text=src_text[0])
 
-    Comenta o elimina el envío de mensajes adicionales al DUMP_ID
+    # Comenta o elimina el envío de mensajes adicionales al DUMP_ID
     if len(src_text) > 1:
         for lin in range(1, len(src_text)):
             MSG.sent_msg = await MSG.sent_msg.reply_text(text=src_text[lin], quote=True)
