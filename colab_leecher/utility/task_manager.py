@@ -1,6 +1,5 @@
 # copyright 2024 © Xron Trix | https://github.com/Xrontrix10
 
-
 import pytz
 import shutil
 import logging
@@ -125,7 +124,6 @@ async def taskScheduler():
 
     if ospath.exists(Paths.WORK_PATH):
         shutil.rmtree(Paths.WORK_PATH)
-        # makedirs(Paths.WORK_PATH)
         makedirs(Paths.down_path)
     else:
         makedirs(Paths.WORK_PATH)
@@ -137,14 +135,15 @@ async def taskScheduler():
     except Exception:
         Paths.HERO_IMAGE = Paths.DEFAULT_HERO
 
-    #MSG.sent_msg = await colab_bot.send_message(chat_id=DUMP_ID, text=src_text[0])
+    # Comenta o elimina el envío de mensajes al DUMP_ID
+    # MSG.sent_msg = await colab_bot.send_message(chat_id=DUMP_ID, text=src_text[0])
 
-    if len(src_text) > 1:
-        for lin in range(1, len(src_text)):
-            MSG.sent_msg = await MSG.sent_msg.reply_text(text=src_text[lin], quote=True)
+    # Comenta o elimina el envío de mensajes adicionales al DUMP_ID
+    # if len(src_text) > 1:
+    #     for lin in range(1, len(src_text)):
+    #         MSG.sent_msg = await MSG.sent_msg.reply_text(text=src_text[lin], quote=True)
 
-    Messages.src_link = f"https://t.me/c/{Messages.link_p}/{MSG.sent_msg.id}"
-    Messages.task_msg += f"__[{BOT.Mode.type.capitalize()} {BOT.Mode.mode.capitalize()} as {BOT.Setting.stream_upload}]({Messages.src_link})__\n\n"
+    Messages.src_link = ""  # O un valor predeterminado si es necesario
 
     await MSG.status_msg.delete()
     img = Paths.THMB_PATH if ospath.exists(Paths.THMB_PATH) else Paths.HERO_IMAGE
