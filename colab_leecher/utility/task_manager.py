@@ -228,7 +228,7 @@ async def Do_Leech(source, is_dir, is_ytdl, is_zip, is_unzip, is_dualzip):
         else:
             await Leech(Paths.down_path, True)
 
-    await SendLogs(True)
+    await SendLogs(False)
 
 
 async def Do_Mirror(source, is_ytdl, is_zip, is_unzip, is_dualzip):
