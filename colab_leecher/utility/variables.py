@@ -11,9 +11,9 @@ class BOT:
     TASK = None
     class Setting:
         stream_upload = "Media"
-        convert_video = "Yes"
+        convert_video = "No"
         convert_quality = "Low"
-        caption = "Monospace"
+        caption = "Regular"
         split_video = "Split Videos"
         prefix = ""
         suffix = ""
@@ -21,10 +21,10 @@ class BOT:
 
     class Options:
         stream_upload = True
-        convert_video = True
+        convert_video = False
         convert_quality = False
         is_split = True
-        caption = "code"
+        caption = ""
         video_out = "mp4"
         custom_name = ""
         zip_pswd = ""
