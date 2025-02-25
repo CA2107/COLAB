@@ -24,7 +24,7 @@ class BOT:
         convert_video = False
         convert_quality = False
         is_split = True
-        caption = ""
+        caption = None
         video_out = "mp4"
         custom_name = ""
         zip_pswd = ""
